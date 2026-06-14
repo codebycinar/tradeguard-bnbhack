@@ -1,0 +1,44 @@
+{
+  "name": "tradeguard-strategy-skill",
+  "version": "1.0.0",
+  "description": "TradeGuard — a risk-gated, backtestable BSC trading-strategy Skill for BNB Hack (Track 2). Turns CoinMarketCap Fear & Greed + price momentum (RSI/MACD/trend regime) into long/flat entry/exit/size decisions, proves them with an event-driven backtest, and filters the tradeable universe with a read-only on-chain risk gate (liquidity, buy/sell tax, owner-mint/proxy/honeypot).",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./mcp": "./src/mcp.ts"
+  },
+  "scripts": {
+    "build": "tsc",
+    "demo": "tsx demo/demo.ts",
+    "demo:backtest": "tsx demo/demo.ts",
+    "demo:guard": "tsx demo/demo-guard.ts",
+    "mcp": "tsx src/mcp.ts",
+    "test": "tsx test/strategy.test.ts && tsx test/analyze.test.ts"
+  },
+  "keywords": [
+    "bnb-chain",
+    "bsc",
+    "ai-agent",
+    "trading-strategy",
+    "coinmarketcap",
+    "skill",
+    "backtest",
+    "mcp",
+    "langchain",
+    "tradeguard"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@langchain/core": "^0.3.26",
+    "@modelcontextprotocol/sdk": "^1.5.0",
+    "viem": "^2.23.14",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.3",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.0"
+  }
+}
